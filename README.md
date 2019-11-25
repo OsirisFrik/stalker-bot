@@ -1,5 +1,7 @@
 # Stalker Bot
 
+![build](https://travis-ci.com/OsirisFrik/stalker-bot.svg?branch=master)
+
 I make this bot to annoy someone on discord server
 
 ## Run

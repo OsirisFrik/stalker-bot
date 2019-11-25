@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "nodemon --inspect=3001 server.js",
     "start": "node server.js",
-    "test": "node test.js"
+    "test": "jest"
   },
   "keywords": [
     "discord",
@@ -27,5 +27,9 @@
   },
   "engines": {
     "node": "10.16.3"
+  },
+  "devDependencies": {
+    "firebase-mock": "^2.2.10",
+    "jest": "^24.9.0"
   }
 }
