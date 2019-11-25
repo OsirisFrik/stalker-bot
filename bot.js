@@ -67,20 +67,22 @@ client.on('message', message => {
 })
 
 client.on('voiceStateUpdate', (oldUser, newUser) => {
-  if (newUser.voiceChannelID !== null && newUser.id === userToStalk.id && voice !== newUser.voiceChannel) {
-    if (voice) {
+  if (userToStalk !== null) {
+    if (newUser.voiceChannelID !== null && newUser.id === userToStalk.id && voice !== newUser.voiceChannel) {
+      if (voice) {
+        disconnect()
+      }
+      voice = newUser.voiceChannel
+      newUser.voiceChannel.join()
+        .then(() => console.log('CONNECTED!!'))
+        .catch(err => console.trace(err))
+    } else if (userToStalk && newUser.id === userToStalk.id && !newUser.voiceChannel) {
+      if (voice) {
+        disconnect()
+      }
+    } else if (!userToStalk && voice) {
       disconnect()
     }
-    voice = newUser.voiceChannel
-    newUser.voiceChannel.join()
-      .then(() => console.log('CONNECTED!!'))
-      .catch(err => console.trace(err))
-  } else if (userToStalk && newUser.id === userToStalk.id && !newUser.voiceChannel) {
-    if (voice) {
-      disconnect()
-    }
-  } else if (!userToStalk && voice) {
-    disconnect()
   }
 })
 
