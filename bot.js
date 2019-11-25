@@ -38,6 +38,7 @@ client.on('message', message => {
           tag: user.tag
         }
       })
+      client.user.setActivity(`@${user.id}`, { type: 'WATCHING' })
       // checkVoiceFile(user.id)
       checkConnections(user.id)
       message.delete()
@@ -85,6 +86,9 @@ client.on('voiceStateUpdate', (oldUser, newUser) => {
 
 function checkConnections() {
   let connections = client.channels
+
+  client.user.setActivity(`a @${userToStalk.username}`, { type: 'WATCHING' })
+
   connections.forEach(channel => {
     if (channel.type === 'voice') {
       channel.members.forEach(user => {
