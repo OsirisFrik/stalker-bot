@@ -1,0 +1,31 @@
+{
+  "name": "skynet-bot",
+  "version": "0.0.1",
+  "description": "discord bot",
+  "main": "server.js",
+  "scripts": {
+    "dev": "nodemon --inspect=3001 server.js",
+    "start": "node server.js",
+    "test": "node test.js"
+  },
+  "keywords": [
+    "discord",
+    "bot",
+    "js",
+    "skynet"
+  ],
+  "author": "OsirisFrik",
+  "license": "ISC",
+  "dependencies": {
+    "@google-cloud/text-to-speech": "^2.0.2",
+    "discord.js": "^11.5.1",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "ffmpeg-binaries": "^4.0.0",
+    "firebase-admin": "^8.8.0",
+    "opusscript": "^0.0.7"
+  },
+  "engines": {
+    "node": "10.16.3"
+  }
+}

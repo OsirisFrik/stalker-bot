@@ -1,0 +1,5 @@
+messages/*.mp3
+node_modules
+secret.json
+.env
+yarn-error.log

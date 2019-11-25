@@ -1,0 +1,12 @@
+language: node_js
+node_js:
+- 10.16.3
+if: branch = master
+before_install:
+# - openssl aes-256-cbc -K $encrypted_a6d55448f9cb_key -iv $encrypted_a6d55448f9cb_iv -in secret.json.enc -out secret.json -d
+deploy:
+  provider: heroku
+  api_key:
+    secure: ohbnbcpdWKzOfuLfYDcN+11+XAnBa39NNFbbVRLAijuSoz9rsOeAHcRuLtD8r8UmBmDFrYOMGRTM4KVmk0j49RCJa531/aaz+xtM58vGTwiM+gWtJCvBbuDgi0z44JFF/VmhROe2ztariMUCFnHGWSb/uq/HAcTU583rOZOWj4jRuUoZ+w8HeT8EZGmfod+JVPjo16Rp17j4IECBA8zJ4CgCiPlApVi6/3ZHfsOUqHu8pnV0GIh2VA9UA+IEqP6pGiGmwmhMBu6Ph+TgtEOqC7tbqI1sXs47ul3V7M3iSLWl1HkzFAdRXD2PkoK5JDlMPeTeHx6Z8OKfgfHrZNLhErV3xjz01Ai1VRudfaRxnVG1TcWBwNaWnGCzd7x+r5vFop6s8n7C4aCY+wBSjnWCqjIE2QgUhzHEHeS+20N0rxcLneQFx3WYKVcs/zx6TolHuNoA7BPxrgVWX5yoI3fl5dBCHzreT7FmzX/wnc1kIkGkxn9gTulwIe7fXSodT6f7PMp3lx4rC0SMcj5C2P4w8QnDOwm/U5HK4fSFYcYw9ZFF2KFZuK67NRVkRKqiwe2QC84KCkNvHNz/6/E+Rb2VKZ8YM8eswjUNBtt1VO6cVUkR68Hxu75w+CEA6pVEHHxpvXXPV7dcz+q/+wwSgZwvVpKKpaxZGDTeD3rPMffToAI=
+  app: stalker-bot-discord
+  on: master
